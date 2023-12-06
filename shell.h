@@ -13,5 +13,7 @@
 #include <signal.h>
 #include <fcntl.h>
 
+int main(int counter, char **args);
+char *line_reader(void);
 
 #endif /*SHELL_H*/
