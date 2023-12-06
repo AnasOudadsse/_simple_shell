@@ -7,7 +7,8 @@ char *line_reader(void)
 	size_t len = 0;
 	ssize_t charnbr;
 
-	write(STDOUT_FILENO, "$ ", 2);
+	if (isatty(STDIN_FILENO))
+		write(STDOUT_FILENO, "$ ", 2);
 	charnbr = getline(&line, &len, stdin);
 	if (charnbr == -1)
 	{

@@ -20,10 +20,10 @@ int main(int counter, char **args)
 		line = line_reader();
 		if (line == NULL)/* reach end of file ; Ctrl + D*/
 		{
-			write(STDOUT_FILENO, "\n",1);
+			if (isatty(STDIN_FILENO))
+				write(STDOUT_FILENO, "\n",1);
 			return (status);
 		}
-		printf("%s",line);
 		free(line);
 		/*command = line_spliter(line);
 
