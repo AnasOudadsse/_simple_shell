@@ -10,7 +10,7 @@
 int main(int counter, char **args)
 {
 	char *line = NULL;
-	/*char **command = NULL;*/
+	char **command = NULL;
 	int status = 0;
 	(void) counter;
 	(void) args;
@@ -25,9 +25,9 @@ int main(int counter, char **args)
 			return (status);
 		}
 		free(line);
-		/*command = line_spliter(line);
+		command = line_spliter(line);
 
-		status = executer(command, args);*/
+		/*status = executer(command, args);*/
 	}
 
 }
