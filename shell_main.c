@@ -11,9 +11,8 @@ int main(int counter, char **args)
 {
 	char *line = NULL;
 	char **command = NULL;
-	int status = 0, i;
+	int status = 0;
 	(void) counter;
-	(void) args;
 
 	while(10)
 	{
@@ -28,10 +27,7 @@ int main(int counter, char **args)
 		if (!command)
 			continue;
 
-		for (i = 0; command[i]; i++)
-			printf("%s\n", command[i]);
-
-		/*status = executer(command, args);*/
+		status = executer(command, args);
 	}
 
 }
