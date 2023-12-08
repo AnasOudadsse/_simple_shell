@@ -11,7 +11,7 @@ int main(int counter, char **args)
 {
 	char *line = NULL;
 	char **command = NULL;
-	int status = 0;
+	int status = 0, i;
 	(void) counter;
 	(void) args;
 
@@ -24,8 +24,12 @@ int main(int counter, char **args)
 				write(STDOUT_FILENO, "\n",1);
 			return (status);
 		}
-		free(line);
 		command = line_spliter(line);
+		if (!command)
+			continue;
+
+		for (i = 0; command[i]; i++)
+			printf("%s\n", command[i]);
 
 		/*status = executer(command, args);*/
 	}

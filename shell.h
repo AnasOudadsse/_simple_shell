@@ -14,11 +14,11 @@
 #include <fcntl.h>
 
 char *line_reader(void);
+char **line_spliter(char *line);
 int _strcmp(char *s, char *ss);
 char *_strdup(const char *string);
 int _strlen(char *str);
 char *_strcat(char *destination, char *source);
 void _strcpy(char *source, char *dest);
-int main(void);
 
 #endif /*SHELL_H*/

@@ -1,6 +1,6 @@
 #include "shell.h"
 
-char **spliter(char *line)
+char **line_spliter(char *line)
 {
 	char *token = NULL;
 	char *tmp = NULL;
