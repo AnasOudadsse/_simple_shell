@@ -15,8 +15,6 @@ int main(int counter, char **args, char *envp[])
 	char **command = NULL;
 	int status = 0;
 	int index = 0;
-	char *path;
-	/*char **env_var;*/
 	(void) counter;
 
 	if (envp == NULL)
@@ -24,19 +22,7 @@ int main(int counter, char **args, char *envp[])
         fprintf(stderr, "Error: envp is NULL, main.c\n");
         return EXIT_FAILURE;
     }
-	/*for (env_var = envp; *env_var != NULL; env_var++)
-	{
-    printf("main.c the envs are : %s\n", *env_var);
-	}*/
-
-
 	environ = envp;
-	path = _getenv("PATH");
-
-    if (path != NULL)
-    {
-        printf("main.c :PATH: %s\n", path);
-    }
 
 	while(10)
 	{
@@ -51,8 +37,6 @@ int main(int counter, char **args, char *envp[])
 		command = line_spliter(line);
 		if (!command)
 			continue;
-
 		status = executer(command, args, index);
 	}
-
 }

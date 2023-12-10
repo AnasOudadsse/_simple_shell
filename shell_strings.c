@@ -37,22 +37,19 @@ char *_strdup(const char *string)
  * Return: difference of the two strings
  */
 
-int _strcmp(char *s, char *ss)
+int _strcmp(char *s1, char *s2)
 {
-	int cmp;
+	int dif = 0;
+	int i;
 
-	cmp = (int)*s - (int)*ss;
-
-	while(s)
+	for (i = 0;  s1[i] != '\0' || s2[i] != '\0'; i++)
 	{
-		if (s != ss)
-			break;
-		s++;
-		ss++;
-		cmp = (int)*s - (int)*ss;
+		dif = s1[i] - s2[i];
+		if (dif != 0)
+			return (dif);
 	}
-	return (cmp);
 
+	return (dif);
 }
 
 
