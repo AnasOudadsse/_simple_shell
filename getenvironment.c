@@ -3,7 +3,7 @@
 
 char *_getenv(char *var)
 {
-    char *cpy, *key, *value, *env; /* **env_var*/
+    char *cpy, *key, *value, *env, **env_var;
     int i;
 
 	if (environ == NULL)
@@ -13,8 +13,8 @@ char *_getenv(char *var)
     }
 
     printf("Checking contents of env in _getenv:\n");
-    /*for (env_var = env; *env_var != NULL; env_var++)
-        printf("%s\n", *env_var);*/
+    for (env_var = environ; *env_var != NULL; env_var++)
+        printf("%s\n", *env_var);
 
 
     printf("Getting environment variable: %s\n", var); /*debug*/
