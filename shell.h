@@ -15,7 +15,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-extern char **env;
+extern char **environ;
 int executer(char **cmd, char **argv, int index);
 char *line_reader(void);
 char **line_spliter(char *line);

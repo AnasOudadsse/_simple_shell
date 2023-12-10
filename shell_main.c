@@ -7,7 +7,7 @@
  * Return: 0 in success
 */
 
-char **env;
+char **environ;
 
 int main(int counter, char **args, char *envp[])
 {
@@ -30,7 +30,7 @@ int main(int counter, char **args, char *envp[])
 	}*/
 
 
-	env = envp;
+	environ = envp;
 	path = _getenv("PATH");
 
     if (path != NULL)

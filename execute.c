@@ -19,7 +19,7 @@ int executer(char **cmd, char **argv, int index)
 	child_fork = fork();
 	if (child_fork == 0)
 	{
-		if (execve(full_command, cmd, env) == -1)
+		if (execve(full_command, cmd, environ) == -1)
 		{
 		    perror("execve");  /* Print error message*/
 			free(full_command), full_command = NULL;
