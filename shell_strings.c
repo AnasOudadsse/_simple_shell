@@ -97,12 +97,15 @@ char *_strcat(char *destination, char *source)
  * Return: void
  */
 
-void _strcpy(char *source, char *dest)
+char *_strcpy(char *destination, char *source)
 {
 	int i = 0;
 
-	for (; source[i] != '\0'; i++)
-		dest[i] = source[i];
-	dest[i] = '\0';
+	while(source[i])
+	{
+		destination[i] = source[i];
+		i++;
+	}
+	destination[i] = '\0';
+	return (destination);
 }
-
